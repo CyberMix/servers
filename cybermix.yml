@@ -4,8 +4,12 @@
 
 # Config for all hosts without exception
 - hosts: all
-  sudo: True
+a  sudo: True
   roles:
-  	- users
-  	- packages
-  	- env
+    - users
+    - packages
+    - env
+
+  vars:
+    users:
+      - cybermix
