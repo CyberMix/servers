@@ -1,0 +1,11 @@
+---
+
+# CyberMix playbook
+
+# Config for all hosts without exception
+- hosts: all
+  sudo: True
+  roles:
+  	- users
+  	- packages
+  	- env

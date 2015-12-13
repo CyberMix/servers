@@ -1,0 +1,9 @@
+---
+
+# Create users
+
+- name: Создание пользователей
+  user: name={{ item }}
+  with_items:
+    - cybermix
+  tags: [users, env, init]
