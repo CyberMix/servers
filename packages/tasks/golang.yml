@@ -1,0 +1,13 @@
+---
+
+# Golang
+
+- name: add Golang PPA
+  sudo: true
+  apt_repository: repo=ppa:ubuntu-lxc/lxd-stable
+  tags: [golang, packages]
+
+- name: install Go package
+  sudo: true
+  apt: pkg=golang
+  tags: [golang, packages]

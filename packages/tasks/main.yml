@@ -1,0 +1,9 @@
+---
+
+# Packages main file
+
+  # Golang
+  - include: golang.yml
+    sudo: yes
+  - include: nginx.yml
+    sudo: yes

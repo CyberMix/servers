@@ -4,11 +4,10 @@
 
 # Config for all hosts without exception
 - hosts: all
-a  sudo: True
   roles:
     - users
     - packages
-    - env
+    # - env
 
   vars:
     users:

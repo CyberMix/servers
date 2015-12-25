@@ -3,11 +3,17 @@
 # Create users
 
   - name: Создание пользователей
-    user: name={{ users }}
+    sudo: yes
+    user:
+      name={{ item }}
+      shell="/bin/bash"
     with_items:
-      - cybermix
+      - "{{ users }}"
     tags: [users, env, init]
 
   - name: Allow deployer to use passwordless sudo
-    template: src={{ users }}.j2 dest=/etc/sudoers.d/{{ users }} mode=0440
+    sudo: yes
+    template: src=sudoers.j2 dest=/etc/sudoers.d/{{ item }} mode=0440
+    with_items:
+      - "{{ users }}"
     tags: [users, sudoers, env, init]
