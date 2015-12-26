@@ -2,8 +2,18 @@
 
 # Packages main file
 
-  # Golang
+  - include: minimal.yml
+    sudo: yes
+    tags: minimal
+
   - include: golang.yml
     sudo: yes
+    tags: golang
+
   - include: nginx.yml
     sudo: yes
+    tags: nginx
+
+  - include: aws-cli.yml
+    sudo: yes
+    tags: aws-cli

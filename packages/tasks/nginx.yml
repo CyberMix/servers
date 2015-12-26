@@ -6,13 +6,11 @@
 # Remove apache2
 - name: Remove apache2 if installed
   apt: name=apache2 state=absent
-  tags: [nginx, rm-apache, packages]
+  tags: rm-apache
 
 # Install Nginx from PPA Repo
 - name: Add nginx/stable PPA
   apt_repository: repo='ppa:nginx/stable'
-  tags: [nginx, packages]
 
 - name: Install nginx from PPA
   apt: name=nginx state=present update_cache=yes
-  tags: [nginx, packages]

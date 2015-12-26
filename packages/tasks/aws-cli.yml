@@ -1,0 +1,6 @@
+---
+
+# tasks file for awscli
+
+- name: Install aws-cli
+  apt: name=awscli state=present update_cache=yes

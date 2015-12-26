@@ -9,11 +9,11 @@
       shell="/bin/bash"
     with_items:
       - "{{ users }}"
-    tags: [users, env, init]
+    tags: [users]
 
   - name: Allow deployer to use passwordless sudo
     sudo: yes
     template: src=sudoers.j2 dest=/etc/sudoers.d/{{ item }} mode=0440
     with_items:
       - "{{ users }}"
-    tags: [users, sudoers, env, init]
+    tags: [users, sudoers]
