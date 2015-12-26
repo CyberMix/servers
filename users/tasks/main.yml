@@ -11,7 +11,7 @@
       - "{{ users }}"
     tags: [users]
 
-  - name: Allow deployer to use passwordless sudo
+  - name: Allow users to use passwordless sudo
     sudo: yes
     template: src=sudoers.j2 dest=/etc/sudoers.d/{{ item }} mode=0440
     with_items:
